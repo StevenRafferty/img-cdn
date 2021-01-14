@@ -17,7 +17,7 @@ app.get('/', (req, res) => res.json({ message: 'Hello World!' }));
 
 const upload = multer();
 
-app.post('/photos/upload', upload.single('image'), async (req, res) => {
+app.post('/photos/upload', upload.single('image'), (req, res) => {
   const cld_upload_stream = cloudinary.uploader.upload_stream(
     {
       folder: 'images',
